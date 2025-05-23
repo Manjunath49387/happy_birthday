@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: white;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3em;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700, 0 0 20px #FF69B4;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cake {
+      width: 200px;
+      margin-top: 30px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .balloon {
+      position: absolute;
+      width: 60px;
+      animation: float 8s infinite linear;
+    }
+
+    .balloon.left1 { left: 5%; animation-delay: 0s; }
+    .balloon.left2 { left: 15%; animation-delay: 2s; }
+    .balloon.left3 { left: 25%; animation-delay: 4s; }
+
+    .balloon.right1 { right: 5%; animation-delay: 1s; }
+    .balloon.right2 { right: 15%; animation-delay: 3s; }
+    .balloon.right3 { right: 25%; animation-delay: 5s; }
+
+    @keyframes float {
+      0% {
+        bottom: -100px;
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(20px);
+      }
+      100% {
+        bottom: 110%;
+        transform: translateX(-20px);
+      }
+    }
+
+    .message {
+      font-size: 1.5em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background music -->
+  <audio autoplay loop hidden>
+    <source src="WhatsApp Audio 2025-05-22 at 7.36.58 PM.aac" type="audio/aac">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="content">
+    <h1>🎉 Happy Birthday Unnimaya 🎂</h1>
+    <p class="message">To another year of friendship, laughter, and unforgettable memories! ✨🎂</p>
+
+    <img class="cake" src="new img.gif" alt="Cake">
+
+    <!-- Left-side Balloons -->
+    <img class="balloon left1" src="images-removebg-preview.png" alt="Balloon">
+    <img class="balloon left2" src="images-removebg-preview.png" alt="Balloon">
+    <img class="balloon left3" src="images-removebg-preview.png" alt="Balloon">
+
+    <!-- Right-side Balloons -->
+    <img class="balloon right1" src="images-removebg-preview.png" alt="Balloon">
+    <img class="balloon right2" src="images-removebg-preview.png" alt="Balloon">
+    <img class="balloon right3" src="images-removebg-preview.png" alt="Balloon">
+  </div>
+
+  <!-- Generate random stars -->
+  <script>
+    const starContainer = document.getElementById("stars");
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      starContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
